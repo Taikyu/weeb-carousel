@@ -1,0 +1,67 @@
+*, *::before *::after{
+    box-sizing: border-box;
+    background-color: rgba(10, 67, 105, 0.507);
+}
+body{
+    margin:0;
+}
+.carousel{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    
+}
+.carousel > ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.slide > img {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    object-position: center;
+}
+.slide{
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: 200ms opacity ease-in-out;
+    transition-delay: 200ms;
+}
+.slide[data-active]{
+    opacity: 1;
+    transition-delay: 0ms ;
+    z-index: 5;
+}
+
+button{
+    position: absolute;
+    background: none;
+    border: none;
+    font-size: 4.5rem;
+    top : 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    color: transparent;
+}
+.prev{
+    left: 4rem;
+}
+.next{
+    right: 4rem;
+}
+
+button:hover{
+    color: rgb(234, 238, 241);
+    background-color: rgba(0, 0, 0, 0.2);
+    padding: 0 1rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+}
+button:active{
+    font-size: 4rem;
+}
+
